@@ -15,10 +15,78 @@
 */
 
 .page {
+  display: grid;
+  place-items: start center;
   min-inline-size: 320px;
+  max-inline-size: 1440px;
   min-block-size: 100dvb;
-  font-family: var(--main-font, "Inter-Variable"), sans-serif;
-  font-variation-settings: 'wght' var(--font-weight-regular, 400);
+  font-family: var(--main-font, 'Inter-Variable'), sans-serif;
+  font-variation-settings: var(--font-weight-regular);
   color: var(--main-color, #000);
   background-color: var(--bg-color, #fff);
+  background-image: var(--bg-image);
+  background-size: cover;
+}
+
+.accent-font {
+  font-family: var(--accent-font, 'PressStart2P');
+  font-weight: var(--accent-font-weight, 400);
+  font-size: var(--accent-font-size, 14px);
+}
+
+.card-size {
+  inline-size: var(--card-size);
+}
+
+.header {
+  display: grid;
+  gap: 25px;
+  padding-block-start: var(--header-padding, clamp(7.5rem, 1.502vw + 7.148rem, 8.5rem));
+  padding-block-end: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--bg-color, #fff);
+  border: 2px solid var(--main-color, #000);
+  margin-block-start: 100px;
+}
+
+.header__logo {
+  display: grid;
+  gap: 20px;
+}
+
+.header__title {
+  font-size: var(--main-logo-size, clamp(3.063rem, 1.502vw + 2.71rem, 4.063rem));
+  font-weight: var(--accent-font-weight, 400);
+}
+
+.header__subtitle {
+  font-size: var(--sub-logo-size, clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem));
+  font-weight: var(--accent-font-weight, 400);
+}
+
+.theme-menu__list {
+  justify-content: center;
+  display: grid;
+  gap: 14px;
+  
+}
+
+.theme-menu__item {
+  text-align: start;
+  margin-inline-start: 17px;
+}
+
+.theme-menu__button {
+  position: relative;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+}
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  position: absolute;
+  inset-inline-start: -19px;
 }

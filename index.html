@@ -17,7 +17,11 @@
     <script src="./scripts/set-theme.js"></script>
   </head>
   <body class="page">
-    <header class="header">
+    <header class="header accent-font card-size">
+      <div class="header__logo">
+        <h1 class="header__title">&lt;/html&gt;</h1>
+        <h2 class="header__subtitle">закрывающий тег</h2>
+      </div>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
         <ul class="theme-menu__list">
@@ -31,8 +35,7 @@
               type="button"
               data-theme="auto"
               disabled
-              class="theme-menu__button"
-            >
+              class="theme-menu__button">
               Авто
             </button>
           </li>
