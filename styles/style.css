@@ -34,20 +34,23 @@
   font-size: var(--accent-font-size, 14px);
 }
 
-.card-size {
+.card-decor {
   inline-size: var(--card-size);
+  background-color: var(--bg-color, #fff);
+  border: 2px solid var(--main-color, #000);
 }
 
 .header {
   display: grid;
   gap: 25px;
-  padding-block-start: var(--header-padding, clamp(7.5rem, 1.502vw + 7.148rem, 8.5rem));
-  padding-block-end: 25px;
+  padding-block-start: var(
+    --header-padding,
+    clamp(7.5rem, 1.502vw + 7.148rem, 8.5rem)
+  );
+  padding-block-end: 23px;
   text-align: center;
   text-transform: uppercase;
-  background-color: var(--bg-color, #fff);
-  border: 2px solid var(--main-color, #000);
-  margin-block-start: 100px;
+  margin-block: 100px;
 }
 
 .header__logo {
@@ -56,20 +59,25 @@
 }
 
 .header__title {
-  font-size: var(--main-logo-size, clamp(3.063rem, 1.502vw + 2.71rem, 4.063rem));
+  font-size: var(
+    --main-logo-size,
+    clamp(3.063rem, 1.502vw + 2.71rem, 4.063rem)
+  );
   font-weight: var(--accent-font-weight, 400);
 }
 
 .header__subtitle {
-  font-size: var(--sub-logo-size, clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem));
+  font-size: var(
+    --sub-logo-size,
+    clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem)
+  );
   font-weight: var(--accent-font-weight, 400);
 }
 
 .theme-menu__list {
   justify-content: center;
   display: grid;
-  gap: 14px;
-  
+  gap: 12px;
 }
 
 .theme-menu__item {
@@ -79,14 +87,11 @@
 
 .theme-menu__button {
   position: relative;
-  padding: 0;
-  background-color: transparent;
-  border: none;
   text-transform: uppercase;
 }
 
 .theme-menu__button:disabled::before {
   content: '▶';
   position: absolute;
-  inset-inline-start: -19px;
+  inset-inline-start: -12px;
 }
