@@ -12,14 +12,27 @@
 
   /* Тема */
   --main-color: #000;
-  --bg-color: #fff;
+  --secondary-color: #fff;
   --bg-image: repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
     repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+  --text-stroke-color: #fff;
+  --heart-main-color: #ff0000;
+  --heart-contour-color: #000;
 
   /* Размеры */
-  --card-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
-  --main-logo-size: clamp(3.063rem, 1.502vw + 2.71rem, 4.063rem);
-  --sub-logo-size: clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem);
-  --header-padding: clamp(7.5rem, 1.502vw + 7.148rem, 8.5rem);
+  --card-size: calc(clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem));
+  --main-logo-size: calc(clamp(3.063rem, 1.502vw + 2.71rem, 4.063rem));
+  --sub-logo-size: calc(clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem));
+  --header-padding: calc(clamp(7.5rem, 1.502vw + 7.148rem, 8.5rem));
+  --like-button-inline-size: calc(clamp(8.125rem, 0vw + 8.125rem, 8.125rem));
+  --like-button-block-size: calc(clamp(2.5rem, 0vw + 2.5rem, 2.5rem));
+  --save-button-inline-size: calc(
+    clamp(19.375rem, 2.817vw + 18.715rem, 21.25rem)
+  );
+  --save-button-block-size: calc(clamp(3.438rem, -2.723vw + 5.888rem, 5.25rem));
+  --dialog-inline-size: calc(clamp(21.313rem, 1.502vw + 20.96rem, 22.313rem));
+  --dialog-block-size: calc(clamp(12.188rem, -0.188vw + 12.232rem, 12.063rem));
+  --dialog-button-inline-size: calc(clamp(16.313rem, 3.38vw + 15.52rem, 18.563rem) - 4px);
+  --dialog-button-block-size: ;
 }
