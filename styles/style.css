@@ -146,10 +146,18 @@
   font-size: var(--font-size, 18px);
   font-variation-settings: var(--font-weight-bold, 'wght' 700);
   padding: 5px 10px 5px;
+  border-block-end: 2px solid;
 }
 
 .card__image-block {
   position: relative;
+  inline-size: var(--card-image-size, calc(clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem)));
+  block-size: var(--card-image-size, calc(clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem)));
+}
+
+.card__image {
+  /* Добавил, чтобы фильтр blur размывал изображение только внутри контейнера */
+  clip-path: inset(0 0 0 0);
 }
 
 .card__label {
@@ -158,13 +166,41 @@
   inset-block-start: 27px;
   mix-blend-mode: hard-light;
   opacity: 0.5;
+  z-index: 1;
 }
 
-@supports(-webkit-text-stroke: 1px var(--text-stroke-color, #fff)) {
+.grayscale {
+  filter: grayscale(80%);
+}
+
+.saturate {
+  filter: saturate(300%);
+}
+
+.hue-rotate {
+  filter: hue-rotate(40deg);
+}
+
+.invert {
+  filter: invert(0.8);
+}
+
+.sepia {
+  filter: sepia(0.9);
+}
+
+.blur {
+  filter: blur(15px);
+}
+
+.multifilter {
+  filter: hue-rotate(90deg) blur(2px) contrast(0.4) saturate(1.5);
+}
+
+@supports (-webkit-text-stroke: 1px var(--text-stroke-color, #fff)) {
   .card__label {
-      -webkit-text-stroke: 1px var(--text-stroke-color, #fff);
-      text-shadow: 
-      1px 1px 0 var(--text-stroke-color, #fff), 
+    -webkit-text-stroke: 1px var(--text-stroke-color, #fff);
+    text-shadow: 1px 1px 0 var(--text-stroke-color, #fff),
       -1px -1px 0 var(--text-stroke-color, #fff),
       -1px 1px 0 var(--text-stroke-color, #fff),
       1px -1px 0 var(--text-stroke-color, #fff);
@@ -174,7 +210,8 @@
 .card__text-content {
   display: grid;
   gap: 25px;
-  padding: 21px 25px 25px 25px;
+  padding: 25px;
+  border-block-start: 2px solid currentColor;
 }
 
 .card__text {
@@ -332,8 +369,14 @@
   align-items: center;
   gap: 8px;
   border: 2px solid currentColor;
-  inline-size: var(--save-button-inline-size, calc(clamp(19.375rem, 2.817vw + 18.715rem, 21.25rem)));
-  block-size: var(--save-button-block-size, calc(clamp(3.438rem, 2.723vw + 2.799rem, 5.25rem)));
+  inline-size: var(
+    --save-button-inline-size,
+    calc(clamp(19.375rem, 2.817vw + 18.715rem, 21.25rem))
+  );
+  block-size: var(
+    --save-button-block-size,
+    calc(clamp(3.438rem, 2.723vw + 2.799rem, 5.25rem))
+  );
 }
 
 .floppy {
@@ -347,8 +390,14 @@
   border: 2px solid var(--main-color, #000);
   color: var(--main-color, #000);
   background-color: var(--secondary-color, #fff);
-  inline-size: var(--dialog-inline-size, calc(clamp(21.313rem, 1.502vw + 20.96rem, 22.313rem)));
-  block-size: var(--dialog-block-size, calc(clamp(12.188rem, -0.188vw + 12.232rem, 12.063rem)));
+  inline-size: var(
+    --dialog-inline-size,
+    calc(clamp(21.313rem, 1.502vw + 20.96rem, 22.313rem))
+  );
+  block-size: var(
+    --dialog-block-size,
+    calc(clamp(12.188rem, -0.188vw + 12.232rem, 12.063rem))
+  );
 }
 
 .dialog[open] {
@@ -360,7 +409,7 @@
 .dialog::backdrop {
   background-color: var(--main-color, #000);
   opacity: 0.75;
-} 
+}
 
 .dialog__content {
   display: grid;
@@ -369,7 +418,10 @@
   justify-self: center;
   align-self: center;
   text-transform: uppercase;
-  inline-size: var(--dialog-button-inline-size, calc(clamp(16.313rem, 3.38vw + 15.52rem, 18.563rem)));
+  inline-size: var(
+    --dialog-button-inline-size,
+    calc(clamp(16.313rem, 3.38vw + 15.52rem, 18.563rem))
+  );
 }
 
 .dialog__content .floppy {
@@ -379,7 +431,6 @@
 
 .dialog__content .button__text {
   line-height: 150%;
-
 }
 
 .dialog__button {
@@ -388,14 +439,31 @@
   align-items: center;
   gap: 8px;
   border: 2px solid currentColor;
-  inline-size: var(--dialog-button-inline-size, calc(clamp(16.313rem, 3.38vw + 15.52rem, 18.563rem)));
+  inline-size: var(
+    --dialog-button-inline-size,
+    calc(clamp(16.313rem, 3.38vw + 15.52rem, 18.563rem))
+  );
   block-size: 38px;
 }
 
 @media (width <= 375px) {
+  .card__text-content {
+    padding-block-start: 21px;
+  }
+
+  .card__label {
+    position: absolute;
+    inset-inline-end: 15px;
+    inset-block-start: 24px;
+    mix-blend-mode: hard-light;
+    opacity: 0.5;
+    z-index: 1;
+  }
+
   .save-button {
     flex-direction: column;
   }
+
   .floppy {
     block-size: 28px;
   }

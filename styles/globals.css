@@ -46,7 +46,6 @@ img {
   inline-size: 100%;
   object-fit: cover;
   object-position: center;
-  border-block: 2px solid currentColor;
 }
 
 ul,
