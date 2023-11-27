@@ -22,7 +22,7 @@
   min-block-size: 100dvb;
   font-family: var(--main-font, 'Inter-Variable'), sans-serif;
   font-size: var(--font-size, 18px);
-  font-variation-settings: var(--font-weight-regular);
+  font-variation-settings: var(--font-weight-regular, 'wght' 400);
   color: var(--main-color, #000);
   background-color: var(--secondary-color, #fff);
   background-image: var(--bg-image);
