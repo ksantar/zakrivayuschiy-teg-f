@@ -25,7 +25,7 @@
   --main-logo-size: calc(clamp(3.063rem, 1.502vw + 2.71rem, 4.063rem));
   --sub-logo-size: calc(clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem));
   --header-padding: calc(clamp(7.5rem, 1.502vw + 7.148rem, 8.5rem));
-  --card-image-size: calc(clamp(23.438rem, 30.141vw + 16.373rem, 43.5rem));
+  --card-image-size: calc(clamp(23.188rem, 30.516vw + 16.035rem, 43.5rem));
   --like-button-inline-size: calc(clamp(8.125rem, 0vw + 8.125rem, 8.125rem));
   --like-button-block-size: calc(clamp(2.5rem, 0vw + 2.5rem, 2.5rem));
   --save-button-inline-size: calc(

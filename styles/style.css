@@ -162,6 +162,7 @@
 
 .card__label {
   position: absolute;
+  font-weight: 700;
   inset-inline-end: 23px;
   inset-block-start: 27px;
   mix-blend-mode: hard-light;
@@ -448,7 +449,7 @@
 
 @media (width <= 375px) {
   .card__text-content {
-    padding-block-start: 21px;
+    padding-block-start: 25px;
   }
 
   .card__label {
