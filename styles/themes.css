@@ -14,21 +14,7 @@
     repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(#e7e7e7 0.01%, #1a1a1a);
   --text-stroke-color: #fff;
-  --heart-contour-color: #000;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --font-weight-regular: 'wght' 400;
-    --font-weight-bold: 'wght' 700;
-    --main-color: #000;
-    --secondary-color: #fff;
-    --bg-image: repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
-      repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
-      linear-gradient(#e7e7e7 0.01%, #1a1a1a);
-    --text-stroke-color: #fff;
-    --heart-contour-color: #000;
-  }
+  --heart-secondary-color: #000;
 }
 
 :root.theme-dark {
@@ -40,7 +26,7 @@
     repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
     linear-gradient(#007f0c, #004306);
   --text-stroke-color: #000;
-  --heart-contour-color: #00cc14;
+  --heart-secondary-color: #00cc14;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,6 +39,6 @@
       repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
       linear-gradient(#007f0c, #004306);
     --text-stroke-color: #000;
-    --heart-contour-color: #00cc14;
+    --heart-secondary-color: #00cc14;
   }
 }
