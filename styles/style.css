@@ -137,26 +137,23 @@
   font-size: var(--font-size, 18px);
   font-variation-settings: var(--font-weight-bold, 'wght' 700);
   padding: 5px 10px 5px;
-  border-block-end: 2px solid;
 }
 
 .card__image-block {
   position: relative;
-  inline-size: var(
-    --card-image-size,
-    calc(clamp(23.188rem, 30.516vw + 16.035rem, 43.5rem))
-  );
   block-size: var(
     --card-image-size,
-    calc(clamp(23.188rem, 30.516vw + 16.035rem, 43.5rem))
+    clamp(23.438rem, 30.141vw + 16.373rem, 43.5rem)
   );
 }
 
 .card__image {
-  inline-size: inherit;
-  block-size: inherit;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: center;
+  border-block-end: 2px solid;
+  border-block-start: 2px solid currentColor;
   /* Добавил, чтобы фильтр blur размывал изображение только внутри контейнера */
   clip-path: inset(0 0 0 0);
 }
@@ -171,14 +168,16 @@
   /* Если указываю свойство text-shadow: 0 0 1px var(--text-stroke-color, #fff), то тень получается просто размытая вокруг текста. Поэтому для чётких контуров использовал фолбек с множественными тенями, как показано в теории: 
   https://practicum.yandex.ru/learn/frontend-developer/courses/4f5191d5-2bc3-4234-be24-967e3d31d2df/sprints/185571/topics/9e6c9787-afe2-41cc-9bd2-804d0e05fc99/lessons/c30b9cff-da38-4801-8690-87121e9038bb/#:~:text=%D0%9A%D0%BE%D0%B4%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%D1%8B%D0%B3%D0%BB%D1%8F%D0%B4%D0%B5%D1%82%D1%8C%20%D1%82%D0%B0%D0%BA%3A */
   text-shadow: 
-    -1px 0 var(--text-stroke-color, #fff), 
+    -1px 0 var(--text-stroke-color, #fff),
     0 1px var(--text-stroke-color, #fff), 
-    1px 0 var(--text-stroke-color, #fff), 
+    1px 0 var(--text-stroke-color, #fff),
     0 -1px var(--text-stroke-color, #fff);
 }
 
-@supports ((text-stroke: 1px var(--text-stroke-color, #fff)) or
-    (-webkit-text-stroke: 1px var(--text-stroke-color, #fff))) {
+@supports (
+  (text-stroke: 1px var(--text-stroke-color, #fff)) or
+    (-webkit-text-stroke: 1px var(--text-stroke-color, #fff))
+) {
   .card__label {
     text-stroke: 1px var(--text-stroke-color, #fff);
     -webkit-text-stroke: 1px var(--text-stroke-color, #fff);
@@ -218,7 +217,6 @@
   display: grid;
   gap: 25px;
   padding: 25px;
-  border-block-start: 2px solid currentColor;
 }
 
 .card__text {
@@ -252,38 +250,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid currentColor;
   inline-size: 130px;
-  block-size: 38px;
-}
-
-.sparks {
-  fill: transparent;
-}
-
-.core {
-  fill: transparent;
-  transition: fill 0.3s linear;
-}
-
-.main-body {
-  fill: transparent;
-  transition: fill 0.3s linear 0.05s;
-}
-
-.contour {
-  fill: var(--heart-secondary-color);
-  transition: fill 0.3s linear 0.05s;
+  min-block-size: 38px;
 }
 
 .button-decor {
   position: relative;
   overflow: hidden;
+  border: 2px solid currentColor;
+  transition: box-shadow 0.3s ease;
 }
 
 .button-decor::before {
   content: '';
   position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 0;
   background-color: currentColor;
   transform: translateX(-100%);
   transform-origin: 0;
@@ -296,19 +278,8 @@
   transform: translateX(0);
 }
 
-.button-decor:hover .floppy {
-  stroke: var(--secondary-color);
-  z-index: 1;
-}
-
-.button-decor:hover .button__text {
-  color: var(--secondary-color);
-}
-
 .button-decor:focus {
   outline: none;
-  box-shadow: px px currentColor;
-  transition: box-shadow 0.3s ease;
 }
 
 .button-decor:focus-visible {
@@ -317,9 +288,9 @@
 
 .button__text {
   line-height: 90%;
-  position: relative;
+  mix-blend-mode: difference;
+  color: var(--accent-color, #fff);
   z-index: 2;
-  transition: color 0.5s ease-in-out;
 }
 
 .save-button {
@@ -332,17 +303,15 @@
     --save-button-inline-size,
     calc(clamp(19.375rem, 2.817vw + 18.715rem, 21.25rem))
   );
-  block-size: var(
-    --save-button-block-size,
-    calc(clamp(3.438rem, 2.723vw + 2.799rem, 5.25rem))
-  );
+  padding: 15px 20px;
 }
 
 .floppy {
   position: relative;
   block-size: 21px;
-  stroke: currentColor;
-  transition: stroke 0.5s ease-in-out;
+  color: var(--accent-color, #fff);
+  mix-blend-mode: difference;
+  z-index: 1;
 }
 
 .dialog {
@@ -353,14 +322,12 @@
     --dialog-inline-size,
     calc(clamp(21.313rem, 1.502vw + 20.96rem, 22.313rem))
   );
-  block-size: var(
-    --dialog-block-size,
-    calc(clamp(12.188rem, -0.188vw + 12.232rem, 12.063rem))
-  );
+  padding: 30px;
 }
 
 .dialog[open] {
   display: grid;
+  gap: 30px;
   justify-items: center;
   align-items: center;
 }
@@ -377,10 +344,6 @@
   justify-self: center;
   align-self: center;
   text-transform: uppercase;
-  inline-size: var(
-    --dialog-button-inline-size,
-    calc(clamp(16.313rem, 3.38vw + 15.52rem, 18.563rem))
-  );
 }
 
 .dialog__content .floppy {
@@ -388,7 +351,7 @@
   block-size: 100%;
 }
 
-.dialog__content .button__text {
+.dialog__content .accent-font {
   line-height: 150%;
 }
 
@@ -402,10 +365,10 @@
     --dialog-button-inline-size,
     calc(clamp(16.313rem, 3.38vw + 15.52rem, 18.563rem))
   );
-  block-size: 38px;
+  padding: 9px 17px;
 }
 
-@media (width <= 375px) {
+@media (width <= 400px) {
   .card-decor {
     inline-size: 100%;
   }
@@ -414,17 +377,9 @@
     font-size: clamp(2rem, 30.909vw - 4.182rem, 3.063rem);
   }
 
-  .card__text-content {
-    padding-block-start: 25px;
-  }
-
   .card__label {
-    position: absolute;
-    inset-inline-end: 15px;
-    inset-block-start: 24px;
-    mix-blend-mode: hard-light;
-    opacity: 0.5;
-    z-index: 1;
+    inset-inline-end: 10px;
+    inset-block-start: 26px;
   }
 
   .save-button {
@@ -433,5 +388,9 @@
 
   .floppy {
     block-size: 28px;
+  }
+
+  .dialog__button {
+    inline-size: 100%;
   }
 }

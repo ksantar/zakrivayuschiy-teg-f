@@ -19,20 +19,19 @@
   --text-stroke-color: #fff;
   --heart-main-color: #ff0000;
   --heart-secondary-color: #000;
+  --accent-color: #fff;
 
   /* Размеры */
-  --card-size: calc(clamp(28.125rem, 25.253vw + 21.023rem, 43.75rem));
+  --card-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
   --logo-size: clamp(3.063rem, 1.502vw + 2.71rem, 4.063rem);
-  --title-size: calc(clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem));
-  --header-padding: calc(clamp(7.5rem, 1.502vw + 7.148rem, 8.5rem));
-  --card-image-size: calc(clamp(23.188rem, 30.516vw + 16.035rem, 43.5rem));
-  --like-button-inline-size: calc(clamp(8.125rem, 0vw + 8.125rem, 8.125rem));
-  --like-button-block-size: calc(clamp(2.5rem, 0vw + 2.5rem, 2.5rem));
-  --save-button-inline-size: calc(clamp(19.375rem, 2.817vw + 18.715rem, 21.25rem));
-  --save-button-block-size: calc(clamp(3.438rem, -2.723vw + 5.888rem, 5.25rem));
-  --dialog-inline-size: calc(clamp(21.313rem, 1.502vw + 20.96rem, 22.313rem));
-  --dialog-block-size: calc(clamp(12.188rem, -0.188vw + 12.232rem, 12.063rem));
-  --dialog-button-inline-size: calc(
-    clamp(16.313rem, 3.38vw + 15.52rem, 18.563rem) - 4px
-  );
+  --title-size: clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem);
+  --header-padding: clamp(7.5rem, 1.502vw + 7.148rem, 8.5rem);
+  --card-image-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
+  --like-button-inline-size: clamp(8.125rem, 0vw + 8.125rem, 8.125rem);
+  --like-button-block-size: clamp(2.5rem, 0vw + 2.5rem, 2.5rem);
+  --save-button-inline-size: clamp(19.375rem, 2.817vw + 18.715rem, 21.25rem);
+  --save-button-block-size: clamp(3.438rem, -2.723vw + 5.888rem, 5.25rem);
+  --dialog-inline-size: clamp(21.313rem, 1.502vw + 20.96rem, 22.313rem);
+  --dialog-block-size: clamp(12.188rem, -0.188vw + 12.232rem, 12.063rem);
+  --dialog-button-inline-size: clamp(15.75rem, 3.474vw + 14.936rem, 18.063rem);
 }

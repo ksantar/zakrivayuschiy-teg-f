@@ -27,6 +27,7 @@
     linear-gradient(#007f0c, #004306);
   --text-stroke-color: #000;
   --heart-secondary-color: #00cc14;
+  --accent-color: #00cc14;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,5 +41,6 @@
       linear-gradient(#007f0c, #004306);
     --text-stroke-color: #000;
     --heart-secondary-color: #00cc14;
+    --accent-color: #00cc14;
   }
 }
