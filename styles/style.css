@@ -29,11 +29,11 @@
   background-size: cover;
   background-attachment: fixed;
   /* Также добавьте стандартную высоту строки здесь по макету, это позволит селекторам ее унаследовать от родителя. */
-  line-height: 21px;
+  line-height: 117%;
 }
 
 .accent-font {
-  font-family: var(--accent-font, 'PressStart2P'), cursive;
+  font-family: var(--accent-font, 'PressStart2P'), fantasy;
   font-weight: var(--accent-font-weight, 400);
   font-size: var(--accent-font-size, 14px);
   line-height: normal;
@@ -103,7 +103,7 @@
   content: '▶';
   position: absolute;
   inset-inline-start: -24px;
-  inset-block-start: auto;
+  inset-block-start: 0px;
   animation: arrow 0.5s infinite ease-in-out alternate;
 }
 
@@ -354,6 +354,10 @@
   line-height: 150%;
 }
 
+.dialog__form {
+  inline-size: 100%;
+}
+
 .dialog__button {
   display: flex;
   justify-content: center;
@@ -387,6 +391,10 @@
 
   .floppy {
     block-size: 28px;
+  }
+
+  .dialog {
+    padding: 30px 36px;
   }
 
   .dialog__button {
