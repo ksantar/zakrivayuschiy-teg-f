@@ -28,7 +28,6 @@
   background-image: var(--bg-image);
   background-size: cover;
   background-attachment: fixed;
-  line-height: normal;
   /* Также добавьте стандартную высоту строки здесь по макету, это позволит селекторам ее унаследовать от родителя. */
   line-height: 21px;
 }
